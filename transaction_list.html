@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions</title>
+    <link rel="stylesheet" href="transaction_list.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Transactions</h2>
+
+        <!-- "To:" Section -->
+        <div class="to-section">
+            <label for="recipient">Search:</label>
+            <input type="text" id="recipient" placeholder="Enter recipient's name" />
+        </div>
+
+        <!-- Transaction History -->
+        <h3>Transaction History</h3>
+        <ul id="transactionList"></ul>
+    </div>
+
+    <div class="nav">
+        <span>🏠</span>
+        <span>📄</span>
+        <span class="active">$</span>
+        <span>🔔</span>
+        <span class="active-clock" onclick="goToPage('transaction_list.html')">🕒</span>
+        <!-- Active Transaction History -->
+    </div>
+
+    <script>
+        const transactions = [
+            { name: "Lexby E Lopez", amount: "$50000" },
+            { name: "John Doe", amount: "$2000" },
+            { name: "Alice Smith", amount: "$500" },
+            { name: "Robert Brown", amount: "$4500" },
+            { name: "Emily White", amount: "$1500" }
+        ];
+
+        const transactionList = document.getElementById("transactionList");
+
+        transactions.forEach(tx => {
+            let li = document.createElement("li");
+            li.innerHTML = `
+                <div class="transaction-item">
+                    <div class="name-status">
+                        <div class="name"><a href="transaction_details.html?name=${tx.name}">${tx.name}</a></div>
+                        <div class="status">Completed</div>
+                    </div>
+                    <div class="amount">${tx.amount}</div>
+                </div>
+            `;
+            transactionList.appendChild(li);
+        });
+
+        // Function to navigate to another page
+        function goToPage(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+
+</html>

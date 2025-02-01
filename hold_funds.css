@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.amount-display {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 10px;
+    background: #007bff;
+    display: inline-block;
+    width: 80%;
+    color: white;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.keypad button {
+    font-size: 24px;
+    padding: 15px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.currency-selector {
+    margin: 15px 0;
+}
+
+select {
+    padding: 8px;
+    font-size: 16px;
+    background: transparent;
+    color: white;
+}
+
+.buttons {
+    margin-top: 15px;
+}
+
+button {
+    width: 100%;
+    /* Full width on mobile */
+    padding: 12px;
+    margin: 5px;
+    background: transparent;
+    color: white;
+    background: #007bff;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    border: none;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background: #007bff;
+    margin-top: 20px;
+}
+
+.nav span {
+    cursor: pointer;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.nav .active {
+    font-weight: bold;
+    color: white;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 20px;
+        /* Adjust header size */
+    }
+
+    button {
+        padding: 15px;
+        width: 100%;
+    }
+}
+
+/* New styles for left-aligning the points */
+ol {
+    text-align: left;
+    /* Align the list items to the left */
+    margin-left: 20px;
+    /* Add left margin for spacing */
+}
+
+ol li {
+    text-align: left;
+    /* Ensure individual items are also left-aligned */
+    margin-bottom: 10px;
+    /* Add some spacing between items */
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Enter Amount</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Enter Amount</h2>
+        <div class="amount-display" id="amountDisplay">$0</div>
+
+        <div class="keypad">
+            <button onclick="appendNumber(1)">1</button>
+            <button onclick="appendNumber(2)">2</button>
+            <button onclick="appendNumber(3)">3</button>
+            <button onclick="appendNumber(4)">4</button>
+            <button onclick="appendNumber(5)">5</button>
+            <button onclick="appendNumber(6)">6</button>
+            <button onclick="appendNumber(7)">7</button>
+            <button onclick="appendNumber(8)">8</button>
+            <button onclick="appendNumber(9)">9</button>
+            <button onclick="appendDecimal()">.</button>
+            <button onclick="appendNumber(0)">0</button>
+            <button onclick="deleteLast()">⌫</button>
+        </div>
+
+        <div class="currency-selector">
+            <label for="currency" style="color: white;">Currency:</label>
+            <select id="currency">
+                <option value="USD" selected>USD</option>
+            </select>
+        </div>
+
+        <div class="buttons">
+            <button onclick="goToPage('request.html')">Request</button>
+            <button onclick="goToPage('bank_details.html')">Pay</button>
+        </div>
+
+        <div class="nav">
+            <span>🏠</span>
+            <span>📄</span>
+            <span class="active">$</span>
+            <span>🔔</span>
+            <span onclick="goToPage('transaction_list.html')">🕒</span> <!-- Clock Icon for Transaction History -->
+        </div>
+    </div>
+
+    <script>
+        let amount = "";
+
+        function appendNumber(num) {
+            if (amount.length < 10) {
+                amount += num;
+                updateDisplay();
+            }
+        }
+
+        function appendDecimal() {
+            if (!amount.includes(".")) {
+                amount += ".";
+                updateDisplay();
+            }
+        }
+
+        function deleteLast() {
+            amount = amount.slice(0, -1);
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            document.getElementById("amountDisplay").innerText = amount ? `$${amount}` : "$0";
+        }
+
+        function goToPage(page) {
+            localStorage.setItem("amount", amount);
+            window.location.href = page;
+        }
+    </script>
+</body>
+
+</html>

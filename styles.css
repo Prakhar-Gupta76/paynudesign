@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    background: #007bff;
+    /* Blue background */
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* border-radius: 15px; */
+}
+
+h2 {
+    color: white;
+    /* White font color */
+}
+
+.amount-display {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 10px;
+    background: #007bff;
+    /* Slightly darker blue background */
+    display: inline-block;
+    width: 80%;
+    color: white;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.keypad button {
+    font-size: 24px;
+    padding: 15px;
+    background: transparent;
+    color: white;
+    /* White text */
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.currency-selector {
+    margin: 15px 0;
+}
+
+select {
+    padding: 8px;
+    font-size: 16px;
+    background: transparent;
+    color: white;
+}
+
+.buttons {
+    margin-top: 15px;
+}
+
+button {
+    width: 45%;
+    padding: 12px;
+    margin: 5px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background: #007bff;
+    /* Darker blue */
+    /* border-radius: 10px; */
+    margin-top: 20px;
+}
+
+.nav span {
+    cursor: pointer;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.nav .active {
+    font-weight: bold;
+    color: white;
+    /* White font for active link */
+}
+
+button {
+    border: none;
+}

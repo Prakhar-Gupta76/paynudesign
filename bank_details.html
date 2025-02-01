@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Details</title>
+    <link rel="stylesheet" href="bank_details.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Enter Bank Details</h2>
+        <input type="text" id="bank" placeholder="Bank Name">
+        <input type="text" id="account" placeholder="Account Number">
+        <input type="text" id="routing" placeholder="Routing Number">
+        <input type="text" id="swift" placeholder="Swift Code">
+        <button onclick="submitPayment()">Submit</button>
+    </div>
+
+    <script>
+        function submitPayment() {
+            let amount = parseFloat(localStorage.getItem("amount")) || 0;
+            if (amount > 10000) {
+                window.location.href = "hold_funds.html";
+            } else {
+                window.location.href = "transaction_list.html";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Detail</title>
+    <link rel="stylesheet" href="transaction_detail.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Transaction Detail</h2>
+        <p id="transactionInfo"></p>
+        <button style="background-color: lightgreen;">✔️ Completed</button>
+        <button disabled>Web Receipt</button>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get("name");
+        const amount = urlParams.get("amount");
+
+        document.getElementById("transactionInfo").innerHTML = `
+            The amount of ${amount} has been sent but will not be available until ${name} meets the minimum requirement.
+            <br><br>
+            You must receive at least $100 in transactions from ${name} to instantly release the ${amount} into their account.
+        `;
+    </script>
+</body>
+
+</html>
