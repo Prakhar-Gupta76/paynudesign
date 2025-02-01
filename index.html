@@ -35,17 +35,20 @@
             </select>
         </div>
 
-        <div class="buttons">
-            <button onclick="goToPage('request.html')">Request</button>
-            <button onclick="goToPage('bank_details.html')">Pay</button>
-        </div>
+        <!-- Move buttons to a bottom section -->
+        <div class="bottom-buttons">
+            <div class="buttons">
+                <button onclick="goToPage('request.html')">Request</button>
+                <button onclick="goToPage('bank_details.html')">Pay</button>
+            </div>
 
-        <div class="nav">
-            <span>🏠</span>
-            <span>📄</span>
-            <span class="active">$</span>
-            <span>🔔</span>
-            <span onclick="goToPage('transaction_list.html')">🕒</span> <!-- Clock Icon for Transaction History -->
+            <div class="nav">
+                <span>🏠</span>
+                <span>📄</span>
+                <span class="active">$</span>
+                <span>🔔</span>
+                <span onclick="goToPage('transaction_list.html')">🕒</span> <!-- Clock Icon for Transaction History -->
+            </div>
         </div>
     </div>
 
