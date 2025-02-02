@@ -38,6 +38,10 @@ body {
     width: 100%;
 }
 
+.enter-amount {
+    margin-top: 100px;
+}
+
 h2 {
     font-size: 24px;
     text-align: center;
