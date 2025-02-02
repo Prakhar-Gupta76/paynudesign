@@ -11,7 +11,6 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     background: #007bff;
     font-family: Arial, sans-serif;
@@ -20,15 +19,23 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    /* Align elements from the top */
     align-items: center;
     height: 100%;
     width: 100%;
     padding: 20px;
     color: white;
-    overflow-y: auto;
-    /* Allow scrolling if needed */
+    position: relative;
+    /* Needed for absolute positioning */
+}
+
+.top-section {
+    flex-grow: 1;
+    /* Allows the section to take space naturally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 h2 {
@@ -66,15 +73,15 @@ h2 {
 }
 
 .currency-selector {
-    margin-top: 20px;
-    /* Add spacing above */
-    margin-bottom: auto;
-    /* Push buttons down */
+    margin: 20px 0;
+    /* Added margin so it doesn't overlap */
+    width: 100%;
+    text-align: center;
 }
 
 select {
-    padding: 8px;
-    font-size: 16px;
+    padding: 10px;
+    font-size: 18px;
     background: transparent;
     color: white;
     border: none;
@@ -84,7 +91,7 @@ select {
     width: 100%;
     position: absolute;
     bottom: 0;
-    background: #007bff;
+    /* background: #007bff; */
     padding: 10px 0;
 }
 
@@ -92,14 +99,20 @@ select {
     display: flex;
     justify-content: space-around;
     width: 100%;
+    padding: 15px;
+    background: #007bff;
+    position: absolute;
+    bottom: 50px;
+    /* Ensures buttons don't overlap with nav */
 }
 
 .buttons button {
     width: 45%;
-    padding: 12px;
+    padding: 15px;
     background: transparent;
     color: white;
     cursor: pointer;
+    /* margin: 5px; */
 }
 
 .nav {
@@ -107,7 +120,9 @@ select {
     justify-content: space-around;
     width: 100%;
     padding: 15px;
-    background: rgba(0, 0, 0, 0.2);
+    /* background: rgba(0, 0, 0, 0.2); */
+    position: absolute;
+    bottom: 0;
 }
 
 .nav span {
