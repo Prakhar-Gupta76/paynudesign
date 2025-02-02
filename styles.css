@@ -1,41 +1,49 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
     height: 100vh;
-    /* Full viewport height */
+    width: 100vw;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    /* Push the buttons to the bottom */
+    justify-content: center;
+    align-items: center;
+    background: #007bff;
+    font-family: Arial, sans-serif;
 }
 
 .container {
-    max-width: 400px;
-    margin: 0 auto;
-    background: #007bff;
-    /* Blue background */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Align elements from the top */
+    align-items: center;
+    height: 100%;
+    width: 100%;
     padding: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    flex-grow: 1;
-    /* Allow container to grow and push the buttons down */
+    color: white;
+    overflow-y: auto;
+    /* Allow scrolling if needed */
 }
 
 h2 {
-    color: white;
-    /* White font color */
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .amount-display {
     font-size: 32px;
     font-weight: bold;
-    margin: 20px 0;
+    background: transparent;
     padding: 10px;
-    background: #007bff;
-    /* Slightly darker blue background */
-    display: inline-block;
-    width: 80%;
+    width: 100%;
+    text-align: center;
     color: white;
 }
 
@@ -43,8 +51,8 @@ h2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    margin: 20px auto;
     width: 80%;
+    margin-top: 20px;
 }
 
 .keypad button {
@@ -52,13 +60,16 @@ h2 {
     padding: 15px;
     background: transparent;
     color: white;
-    /* White text */
+    border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s, color 0.3s;
 }
 
 .currency-selector {
-    margin: 15px 0;
+    margin-top: 20px;
+    /* Add spacing above */
+    margin-bottom: auto;
+    /* Push buttons down */
 }
 
 select {
@@ -66,53 +77,48 @@ select {
     font-size: 16px;
     background: transparent;
     color: white;
+    border: none;
 }
 
 .bottom-buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    /* Align items at the bottom */
-    margin-top: auto;
-    /* Ensures it's at the bottom */
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: #007bff;
+    padding: 10px 0;
 }
 
 .buttons {
-    margin-top: 15px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    width: 100%;
 }
 
-button {
+.buttons button {
     width: 45%;
     padding: 12px;
-    margin: 5px;
     background: transparent;
     color: white;
     cursor: pointer;
-    transition: background 0.3s, color 0.3s;
-    border: none;
 }
 
 .nav {
     display: flex;
     justify-content: space-around;
+    width: 100%;
     padding: 15px;
-    background: #007bff;
-    /* Darker blue */
-    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .nav span {
     cursor: pointer;
     padding: 5px;
-    font-size: 18px;
+    font-size: 24px;
 }
 
 .nav .active {
     font-weight: bold;
     color: white;
-    /* White font for active link */
 }
 
 button {
